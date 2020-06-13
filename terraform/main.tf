@@ -24,6 +24,10 @@ module "iam_role" {
   identifier = "ecs-tasks.amazonaws.com"
 }
 
+module "cluster" {
+  source   = "./modules/cluster"
+}
+
 module "task_definition" {
   source   = "./modules/task_definition"
   image_uri = "607754652120.dkr.ecr.ap-northeast-1.amazonaws.com/node-app:latest"
